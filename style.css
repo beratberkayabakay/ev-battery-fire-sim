@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#cells-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    transition: background-color 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}
+
+.cell.hot {
+    background-color: yellow; /* Hücre ısındığında sarı olur */
+}
+
+.cell.on-fire {
+    background-color: red; /* Yangın başladığında kırmızı olur */
+}
+
+.cell::before {
+    content: attr(data-id);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.cell .status {
+    font-size: 14px;
+}
